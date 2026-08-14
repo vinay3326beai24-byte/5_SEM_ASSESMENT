@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Movie Ticket Booking System</title>
+</head>
+
+<body>
+
+    <h1>Online Movie Ticket Booking System</h1>
+
+    <script>
+
+        console.log("1. Checking Seat Availability...");
+
+        // Variable to check whether seats are available
+        let seatsAvailable = true;
+
+
+        // Create a Promise named booking
+        let booking = new Promise(function(resolve, reject) {
+
+            // Simulating an asynchronous booking process
+            setTimeout(function() {
+
+                if (seatsAvailable) {
+
+                    // If seats are available
+                    resolve("2. Seats are Available");
+
+                } else {
+
+                    // If seats are not available
+                    reject("No Seats Available");
+
+                }
+
+            }, 2000);
+
+        });
+
+
+        // Promise Chaining
+        booking
+
+            // First .then()
+            // Check Seat Availability
+            .then(function(message) {
+
+                console.log(message);
+
+                // Pass result to next .then()
+                return "3. Seat Availability Checked";
+
+            })
+
+
+            // Second .then()
+            // Process Payment
+            .then(function(message) {
+
+                console.log(message);
+
+                return "4. Payment Processed Successfully";
+
+            })
+
+
+            // Third .then()
+            // Confirm Booking
+            .then(function(message) {
+
+                console.log(message);
+
+                return "5. Movie Booking Confirmed";
+
+            })
+
+
+            // Fourth .then()
+            // Generate Ticket
+            .then(function(message) {
+
+                console.log(message);
+
+                return "6. Movie Ticket Generated Successfully";
+
+            })
+
+
+            // Fifth .then()
+            .then(function(message) {
+
+                console.log(message);
+
+                console.log("7. Enjoy Your Movie!");
+
+            })
+
+
+            // Handle Errors
+            .catch(function(error) {
+
+                console.log("Error:", error);
+
+            });
+
+    </script>
+
+</body>
+</html>
